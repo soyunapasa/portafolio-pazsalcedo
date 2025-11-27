@@ -1,0 +1,336 @@
+/* --- REINICIO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.8; 
+    background-color: #f9f9fc; 
+    color: #444; 
+    scroll-behavior: smooth; 
+}
+
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, .logo, .project-title {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 { font-weight: 700; letter-spacing: 2px; }
+h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.8rem; }
+h3 { color: #333; margin-bottom: 15px; font-size: 1.4rem; }
+
+p { margin-bottom: 20px; font-size: 1.05rem; }
+
+/* --- CABECERA (HEADER) --- */
+.header {
+    background: #111111; 
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    /*  sombra suave para separarlo aún más */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+}
+.logo img {
+    height: 50px; 
+    width: auto; 
+    display: block;
+    filter: invert(1) brightness(2); 
+}
+
+.navbar ul { list-style: none; display: flex; }
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+.navbar a:hover { color: #ff4d6d; }
+
+/* --- MENÚ MÓVIL (Botón) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- ESTILOS DE PÁGINA DE PROYECTO --- */
+.project-detail {
+    max-width: 1000px; /* Limita el ancho para que no se estire demasiado */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-title {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.project-client {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    display: inline-block;
+    background: #ff4d6d;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+/* --- VIDEO PRINCIPAL (YouTube Horizontal) --- */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px; 
+    height: 0; 
+    width: 100%; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 60px;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* --- CONTENIDO DEL PROYECTO --- */
+.project-description {
+    background: white;
+    padding: 40px; /* Más espacio interno */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.text-block {
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centrar el texto */
+    text-align: left;
+}
+
+/* Divisor estético */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.logo-gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px; /* Espacio entre los dos logos */
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.logo-gallery img {
+    /* CAMBIAR ESTE NÚMERO PARA AGRANDAR O ACHICAR LOS LOGOS */
+    height: 180px; 
+    width: auto; 
+    object-fit: contain;
+    border-radius: 8px;
+    padding: 10px;
+    background: white; /* Fondo blanco por si son PNG transparentes */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.logo-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* --- GALERÍAS DE IMÁGENES (Tramas, subtramas) --- */
+.process-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.process-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.process-gallery img:hover {
+    transform: scale(1.02);
+}
+
+.process-gallery figure {
+    margin: 0;
+    text-align: center;
+}
+
+.process-gallery figcaption {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Imagen Centrada (Paleta) */
+.image-centered {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.image-centered img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* --- LISTA DE SOFTWARE (Etiquetas grises) --- */
+.tech-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+    padding: 0;
+}
+
+.tech-list li {
+    background: #eef;
+    color: #556;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* --- VIDEOS VERTICALES (Grid especial) --- */
+.vertical-videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Columnas para celular */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.vertical-video-wrapper {
+    text-align: center;
+}
+
+.vertical-video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 9/16; /* Mantiene la proporción vertical de celular */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.vertical-video-wrapper p {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #555;
+}
+
+/* --- SECCIÓN PDF --- */
+.pdf-section {
+    text-align: center;
+    background: white;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 60px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 800px; 
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* --- PIE DE PÁGINA (Footer) --- */
+footer {
+    background: #1a1a2e;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    margin-bottom: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #ff4d6d;
+    transform: translateY(-5px);
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 768px) {
+    .header { padding: 10px 5%; }
+    
+    .project-title { font-size: 2rem; }
+    
+    .project-detail { padding: 0 15px; }
+    
+    .project-description { padding: 25px; }
+    
+    .pdf-viewer { height: 500px; }
+
+    /* Menú Hamburguesa en Móvil */
+    .menu-toggle { display: block; }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: #111;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .navbar.active { display: block; }
+
+    .navbar ul { flex-direction: column; gap: 15px; }
+    
+    .navbar a { display: block; padding: 10px; font-size: 1.1rem; }
+}

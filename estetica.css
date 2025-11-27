@@ -1,0 +1,466 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.8;
+    background-color: #f9f9fc; 
+    color: #444; 
+    scroll-behavior: smooth; 
+}
+
+h1, h2, h3, .logo, .project-title {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 { font-weight: 700; letter-spacing: 2px; }
+h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.8rem; }
+h3 { color: #333; margin-bottom: 15px; font-size: 1.4rem; }
+
+p { margin-bottom: 20px; font-size: 1.05rem; }
+
+/* ESTILOS DE CABECERA/NAVEGACIÓN */
+.header {
+    background: #111111; 
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    /*  sombra suave para separarlo aún más */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+}
+.logo img {
+    height: 50px; /* tamaño logo */
+    width: auto; 
+    display: block;
+    
+    filter: invert(1) brightness(2); 
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ff4d6d; 
+}
+
+/* --- MENÚ MÓVIL (Botón) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ESTILOS GENERALES DE SECCIÓN */
+section {
+    padding: 60px 5%; 
+    margin: 20px 0;
+    min-height: 80vh; 
+}
+
+/* ESTILOS SECCIÓN HERO */
+.hero {
+    background-color: #1a1a2e;
+    color: white;
+    text-align: center;
+    padding-top: 4rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- CONTENEDOR DE VIDEO RESPONSIVE (16:9) --- */
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 25px; 
+    height: 0; 
+    width: 100%; 
+    max-width: 900px; 
+    margin: 30px auto 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 15); 
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 60px;
+}
+.text-block {
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centrar el texto */
+    text-align: left;
+}
+
+/* Divisor estético */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* ESTILOS DE PORTAFOLIO (GALERÍA) */
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px; 
+}
+
+.project-item {
+    background: white;
+    border-radius: 10px; 
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); 
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none; /* Quitar subrayado del enlace */
+    color: inherit;
+    display: block; /* Para que el enlace cubra todo el item */
+    border: 3px solid transparent;
+}
+
+.project-item:hover {
+    transform: translateY(-8px) scale(1.02); 
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+    border: 3px solid #ff4d6d;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.project-item h3 {
+    padding: 15px 10px;
+    font-size: 1.2rem;
+    color: #333; /* Mantener el texto oscuro, el hover ya es colorido */
+}
+
+/* ESTILOS DE CONTACTO/FORMULARIO REFINADOS */
+.contact {
+    /* Mantener el fondo ligeramente más claro */
+    text-align: center;
+    background-color: #f0f0f5; 
+    padding: 80px 5%; /* Más relleno superior/inferior para separarlo */
+}
+
+.contact h2 {
+    color: #2c2c34;
+    margin-bottom: 5px;
+}
+
+.contact p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.contact form {
+    max-width: 600px; /* Un poco más ancho para campos largos */
+    margin: 0 auto;
+    display: grid;
+    gap: 20px; /* Más espacio entre campos */
+    padding: 30px;
+    background: white; /* Fondo blanco para contraste */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave para que flote */
+}
+
+/* Estilo de los campos de entrada */
+.contact input[type="text"], 
+.contact input[type="email"], 
+.contact textarea {
+    width: 100%;
+    padding: 15px; /* Más relleno interior para que se vean mejor */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Bordes más suaves */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al enfocar (cuando el usuario hace clic en el campo) */
+.contact input[type="text"]:focus, 
+.contact input[type="email"]:focus, 
+.contact textarea:focus {
+    border-color: #ff4d6d; /* Borde se vuelve color de acento */
+    box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.2); /* Borde luminoso */
+    outline: none; /* Quitar el borde azul predeterminado del navegador */
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 150px; /* Un área de mensaje más grande */
+}
+
+/* Estilo del botón */
+.contact button {
+    background: #ff4d6d;
+    color: white;
+    padding: 12px 25px; 
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 1.1rem; /* Botón ligeramente más grande */
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #e0415a;
+}
+
+/* PIE DE PÁGINA Y REDES SOCIALES */
+footer {
+    background: #1a1a2e; /* Mismo color oscuro que la cabecera/hero */
+    color: white;
+    text-align: center;
+    padding: 30px 0; /* Un poco más de espacio arriba y abajo */
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    margin-bottom: 15px; /* Espacio entre iconos y el texto de copyright */
+}
+
+.social-icons a {
+    display: inline-block; /* Para que respeten márgenes y transformaciones */
+    color: rgba(255, 255, 255, 0.8); 
+    font-size: 1.8rem; /* Tamaño de los iconos */
+    margin: 0 15px; /* Separación entre ellos */
+    transition: all 0.3s ease; /* Animación  */
+}
+
+.social-icons a:hover {
+    color: #ff4d6d; /* Color de acento al pasar el mouse */
+    transform: translateY(-5px); /* Efecto de "flotar" hacia arriba */
+}
+
+
+/* --- ESTILOS SECCIÓN SOBRE MÍ --- */
+.about {
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bio-text {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.skills-container h4 {
+    margin-bottom: 15px;
+    color: #2c2c34;
+    font-size: 1.3rem;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: #ff4d6d; 
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- ESTILOS DE PÁGINA DE PROYECTO INDIVIDUAL --- */
+.project-detail {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.project-title {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-client {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 5px 15px;
+    color: #ff4d6d; 
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+}
+
+.project-description {
+    margin-top: 40px;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.project-description h2 {
+    color: #ff4d6d;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.process-images {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.process-images img {
+    max-width: 100%;
+    width: 450px; 
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-description ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 15px;
+}
+
+
+/* --- ESTILOS RESPONSIVE (MEDIA QUERIES) --- */
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    /* --- MÓVILES: CABECERA Y NAVEGACIÓN --- */
+    
+    .menu-toggle {
+        display: block; 
+    }
+
+    .navbar {
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        width: 100%;
+        background: #2c2c34; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar ul {
+        flex-direction: column; 
+        padding: 10px 0;
+    }
+
+    .navbar li {
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 5px;
+    }
+    
+    /* --- MÓVILES: DETALLE DE PROYECTO --- */
+    .process-images {
+        flex-direction: column; 
+    }
+}
+
+@media (max-width: 480px) {
+    /* Reduce el padding lateral en la mayoría de las secciones */
+    section {
+        padding: 40px 3%; 
+        margin: 10px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
+

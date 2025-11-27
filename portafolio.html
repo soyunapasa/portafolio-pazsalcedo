@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Completo - Paz Salcedo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="portafolio.css">
+</head>
+
+<body>
+
+   <header class="header">
+       <div class="logo">
+    <a href="index.html"> <img src="logo1.png" alt="Logo Paz Salcedo">
+    </a>
+</div>
+      
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html#home">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li> 
+                <li><a href="codigo.html#about">Sobre Mí</a></li>
+                <li><a href="codigo.html#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+    </header>
+
+    <section class="portfolio">
+        <h2>Todos los Proyectos y Colaboraciones</h2>
+        <div class="gallery">
+            
+            <a href="amanay.html" class="project-item">
+                <img src="amanaylogo.png" alt="Proyecto transmedia">
+                <h3>PROYECTO AMANAY</h3>
+            </a>
+            
+            <a href="documental.html" class="project-item">
+                <img src="documental.png" alt="Cortometraje">
+                <h3>Productora de Cortometraje</h3>
+            </a>
+            
+            <a href="juego.html" class="project-item">
+                <img src="juego.png" alt="Juego online">
+                <h3>Programación juego online</h3>
+            </a>
+             
+            <a href="https://drive.google.com/file/d/17RP5aqAJhtLDE6DroH4k0vY5Hy6B4N5k/view?usp=drive_link" class="project-item" target="_blank">
+                <img src="Reencuentro.png" alt="Cortometraje">
+                <h3>Cortometraje "Reencuentro"</h3>
+            </a>
+
+             <a href="https://youtu.be/ScdD6bCo9B4?si=UqjWueQKrA5Q-2Kj" class="project-item" target="_blank">
+                <img src="stopmotion.png" alt="Stop Motion">
+                <h3>Stop Motion</h3>
+            </a>
+
+             <a href="https://youtu.be/thbINbrPOK0?si=oFs-Jw1EyLBXNEXV" class="project-item" target="_blank">
+                <img src="malaugurio.png" alt="Mal Augurio">
+                <h3>Cortometraje "Mal Augurio"</h3>
+            </a>
+            <a href="https://youtu.be/OUHyRWwWYzM?si=hIgoNvhuUCGDJJe9" class="project-item" target="_blank">
+                <img src="videoclip.png" alt="Mal Augurio">
+                <h3>Video Musical</h3>
+            </a>
+            <a href="https://youtu.be/rjUt4Y0XyN0?si=VGARccknQpSl2RvL" class="project-item" target="_blank">
+                <img src="elrefugiodealejo.png" alt="Mal Augurio">
+                <h3>Cortometraje "El refugio de Alejo"</h3>
+            </a>
+            <a href="https://drive.google.com/file/d/1_Aly3-QAZalmE_po68yvILjQCZiNmQpo/view?usp=sharing" class="project-item" target="_blank">
+                <img src="festifercho.png" alt="Mal Augurio">
+                <h3>Festival FestiFercho</h3>
+            </a>
+            <a href="https://www.instagram.com/lastresmariasfontana/" class="project-item" target="_blank">
+                <img src="lastresmarias.png" alt="Mal Augurio">
+                <h3>Redes Sociales: Mi panadería</h3>
+            </a>
+            <a href="https://docs.google.com/document/d/1rXSUcYMR2jN5bF_6BJ44aPYiMhnO3MxyIv3SSPyLNeo/edit?usp=sharing" class="project-item" target="_blank">
+                <img src="espejismos.png" alt="Mal Augurio">
+                <h3>Proyecto "Espejismos"</h3>
+            </a>
+            <a href="https://www.instagram.com/buscoempleo_chaco/" class="project-item" target="_blank">
+                <img src="REDES.png" alt="Mal Augurio">
+                <h3>Cuenta de Empleo</h3>
+            </a>
+
+            </div>
+    </section>
+
+    <footer>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        
+        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+     <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
+    <i class="fas fa-envelope"></i>
+</a>
+    </div>
+    
+    <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+</footer>
+    
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('active'); 
+        });
+    </script>
+</body>
+</html>

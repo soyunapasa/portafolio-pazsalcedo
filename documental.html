@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paz Salcedo - Portafolio de Animación</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Paz Salcedo - Portafolio de Animación</title>
+    <link rel="stylesheet" href="documental.css">
+</head>
+<body>
+
+    <header class="header">
+       <div class="logo">
+    <a href="index.html"> <img src="logo1.png" alt="Logo Paz Salcedo">
+    </a>
+</div>
+      
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href= "codigo.html#about">Sobre Mí</a></li>
+                <li><a href= "codigo.html#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+    </header>
+
+    <section class="project-detail">
+        <h1 class="project-title">DALEX documental</h1>
+        <p class="project-client">Ganador de Pitching UNNE, Concurso de cine Guácaras, Selección Mar del Plata y Premio Box Brasil Media Group</p>
+        <div class="project-meta">
+            <span>Rol: Productora</span> | 
+            <span>Duración: 12 Minutos</span> | 
+            <span>Año: 2025</span>
+        </div>
+
+         <div class="project-video-container video-responsive">
+            <iframe 
+                src= "https://www.youtube.com/embed/vSfrwoLHx6Q?autoplay=1&mute=1"
+                 title="DALEX" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+            ></iframe>
+        </div>
+
+        <div class="project-description">
+            <h2>Sinopsis</h2>
+            <p>
+            En este corto documental se aborda la vida y la
+situación actual de las personas disidentes en el Chaco
+por medio de la vida de una mujer transgenero que dentro de la
+militancia lucha por su igualdad de derechos.
+Logra formar una familia, ser madre, poder acceder a
+inserción laboral en salud publica y acceder como
+deportista incorporarse al equipo de futbol femeninas
+de primera división del Club Chaco For Ever.
+            </p>
+            
+            <h2>Mi rol como productora</h2>
+            <p>Me encargue de la organización del proyecto, antes, durante y después. Fui la encargada de hablar con cada área constantemente, salir a presentar el proyecto ante radios, directores, funcionarios. 
+                Organicé cada rodaje, realicé las planillas de control y presenté el documental en festivales.
+            </p>
+            <ul>
+                <li>Cronograma de trabajo.</li>
+                <li>Desglose de guión.</li>
+                <li>Presupuesto y plan de financiación.</li>
+                <li>Coordinación de equipos.</li>
+                 <li>Gestión de contratos.</li>
+                <li>Logística: catering, transporte.</li>
+                <li>Supervisión del rodaje y cumplimiento del plan diario.</li>
+                <li>Control de gastos e imprevistos.</li>
+                <li>Distribución y estrategia de festivales.</li>
+
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+   <div class="social-icons">
+            <a href="https://www.instagram.com/pazi.chibi" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
+    <i class="fas fa-envelope"></i>
+</a>
+ </div>
+    
+    <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+</footer>
+    
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        toggleButton.addEventListener('click', () => {
+            navbar.classList.toggle('active'); 
+        });
+    </script>
+</body>
+</html>

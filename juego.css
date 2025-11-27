@@ -1,0 +1,230 @@
+/* --- REINICIO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    line-height: 1.8; /* Mejor lectura */
+    background-color: #f9f9fc; /* Fondo muy suave, casi blanco */
+    color: #444; /* Gris oscuro en vez de negro puro para suavizar */
+    scroll-behavior: smooth; 
+}
+
+/* --- TIPOGRAFÍA --- */
+h1, h2, h3, .logo, .project-title {
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+}
+
+h1 { font-weight: 700; letter-spacing: 2px; }
+h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.8rem; }
+h3 { color: #333; margin-bottom: 15px; font-size: 1.4rem; }
+
+p { margin-bottom: 20px; font-size: 1.05rem; }
+
+/* --- CABECERA (HEADER) --- */
+.header {
+    background: #111111; 
+    color: white;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+    /*  sombra suave para separarlo aún más */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+}
+.logo img {
+    height: 50px; /* Ajusta este número según qué tan grande quieras el logo */
+    width: auto; /* Mantiene la proporción para que no se deforme */
+    display: block;
+    
+    filter: invert(1) brightness(2); 
+}
+
+.navbar ul { list-style: none; display: flex; }
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+.navbar a:hover { color: #ff4d6d; }
+
+/* --- MENÚ MÓVIL (Botón) --- */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* --- ESTILOS DE PÁGINA DE PROYECTO --- */
+.project-detail {
+    max-width: 1000px; /* Limita el ancho para que no se estire demasiado */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.project-header {
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.project-title {
+    font-size: 3rem;
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.project-client {
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.project-meta {
+    display: inline-block;
+    background: #ff4d6d;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+
+
+
+/* --- CONTENIDO DEL PROYECTO --- */
+.project-description {
+    background: white;
+    padding: 40px; /* Más espacio interno */
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.text-block {
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centrar el texto */
+    text-align: left;
+}
+
+/* Divisor estético */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+
+/* --- CONTENEDOR SCRATCH CORREGIDO --- */
+.scratch-responsive {
+    /* 1. Centrado */
+    margin: 40px auto;
+    
+    /* 2. Tamaño exacto */
+    width: 100%; 
+    max-width: 485px; /* El ancho original de Scratch */
+    
+    /* 3. La Magia: Mantiene la proporción exacta (Ancho / Alto) */
+    aspect-ratio: 485 / 402; 
+    
+    /* 4. Estética */
+    border: 4px solid #2c2c34; /* Borde oscuro para enmarcar */
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    background-color: #e0e0e0; /* Fondo gris mientras carga */
+    overflow: hidden; /* Para que las esquinas redondeadas funcionen */
+}
+
+.scratch-responsive iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block; /* Elimina espacios fantasma */
+}
+
+
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 768px) {
+    .header { padding: 10px 5%; }
+    
+    .project-title { font-size: 2rem; }
+    
+    .project-detail { padding: 0 15px; }
+    
+    .project-description { padding: 25px; }
+    
+    .pdf-viewer { height: 500px; }
+
+    /* Menú Hamburguesa en Móvil */
+    .menu-toggle { display: block; }
+
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 100%; /* Justo debajo del header */
+        left: 0;
+        width: 100%;
+        background: #111;
+        padding: 20px 0;
+        text-align: center;
+    }
+
+    .navbar.active { display: block; }
+
+    .navbar ul { flex-direction: column; gap: 15px; }
+    
+    .navbar a { display: block; padding: 10px; font-size: 1.1rem; }
+}
+
+/* --- PIE DE PÁGINA (Footer) CORREGIDO --- */
+footer {
+    background: #1a1a2e;
+    color: #ccc;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    
+    /* ESTO ES NUEVO: Asegura que la barra negra ocupe todo el ancho */
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Evita que cualquier cosa se salga de la barra */
+}
+
+.social-icons {
+    margin-bottom: 20px;
+    
+    /* LA CLAVE: Usar Flexbox para centrar y evitar cortes */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    flex-wrap: wrap; /* Si no caben, los baja al renglón siguiente (no los corta) */
+    gap: 20px; /* Espacio limpio entre iconos */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    /* Quitamos el margen lateral porque ahora usamos 'gap' arriba */
+    transition: all 0.3s ease;
+    display: inline-block; /* Necesario para que la animación funcione */
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #ff4d6d;
+    transform: translateY(-5px); /* El saltito al pasar el mouse */
+}

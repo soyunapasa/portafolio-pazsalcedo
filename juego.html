@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación de Juego - Paz Salcedo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="juego.css"> 
+</head>
+<body>
+
+    <header class="header">
+       <div class="logo">
+            <a href="index.html"> 
+                <img src="logo1.png" alt="Logo Paz Salcedo">
+            </a>
+        </div>
+      
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="codigo.html#about">Sobre Mí</a></li>
+                <li><a href="codigo.html#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+    </header>
+
+    <section class="project-detail">
+        
+        <div class="project-header">
+            <h1 class="project-title">Programación de juego</h1>
+            <p class="project-client">Programado en Scratch</p>
+            <div class="project-meta">
+                <span>Rol: Programadora, creadora</span> |  
+                <span>Año: 2023</span>
+            </div>
+        </div>
+
+        <div class="scratch-responsive">
+            <iframe 
+                src="https://scratch.mit.edu/projects/869033071/embed" 
+                allowtransparency="true" 
+                frameborder="0" 
+                scrolling="no" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="project-description">
+            <div class="text-block" >
+                <h2>Cómo Jugar 🎮</h2>
+                <p>
+                    Haz clic en la <strong>Bandera Verde</strong> para iniciar.
+                    <br>
+                    Usa la <strong>flecha derecha</strong> para moverte y <strong>hacé clic</strong> cuando sea necesario para interactuar.
+                </p>
+            </div>
+            
+            <div class="text-block">
+                <h2>Sobre el desarrollo</h2>
+                <p>
+                    En este proyecto exploré la lógica de programación visual. Creé primero un guión y las subtramas del juego, investigué imágenes y las arreglé para que queden bien. El sonido es una canción "A lo verde- La Vela Puerca" que no tiene voz y está con efecto para que parezca mas de un juego.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        
+        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+     <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
+    <i class="fas fa-envelope"></i>
+</a>
+    </div>
+        <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+    </footer>
+    
+    <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+                navbar.classList.toggle('active'); 
+            });
+        }
+    </script>
+
+</body>
+</html>

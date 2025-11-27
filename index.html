@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paz Salcedo - Portafolio de Animación</title>
+    <link rel="stylesheet" href="estetica.css">
+</head>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Paz Salcedo - Portafolio de Animación</title>
+    <link rel="stylesheet" href="estetica.css">
+</head>
+<body>
+
+    <header class="header">
+       <div class="logo">
+    <a href="#home"> <img src="logo1.png" alt="Logo Paz Salcedo">
+    </a>
+</div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Producción de videos y Motion Graphics</h1>
+        <p>Técnica en Diseño de Imagen, Sonido y Multimedia - UNNE</p>
+        
+   <div class="video-responsive">
+    <iframe 
+        src="https://www.youtube.com/embed/OUHyRWwWYzM?autoplay=1&mute=1" 
+        title="Proyecto de un Sueño" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+    ></iframe>
+</div>
+</section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Mi Trabajo Destacado</h2>
+        <div class="gallery">
+            <a href="amanay.html" class="project-item"> <img src="amanaylogo.png" alt="Proyecto 1: Animación de Logo">
+                <h3>Proyecto Amanay</h3>
+            </a>
+            <a href="documental.html" class="project-item">
+                <img src="documental.png" alt="Cortometraje">
+                <h3>Documental</h3>
+            </a>
+            </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Hola, soy Maria Paz Salcedo</h2>
+        <p class="bio-text">Me recibí en noviembre 2025. Me especializo en diseño, con manejo de Adobe Premiere, After Effects y Blender. Fuí becada por Telecom donde aprendí a programar. Me apasiona trabajar con marcas y contar historias.</p>
+        
+        <div class="skills-container">
+            <h4>Mis Habilidades Clave:</h4>
+            <div class="skills-list">
+                <span class="skill-tag">Adobe After Effects</span>
+                <span class="skill-tag">Adobe Premiere</span>
+                <span class="skill-tag">Blender</span>
+                <span class="skill-tag">Motion Graphics</span>
+                 <span class="skill-tag">HTML y CSS</span>
+                 <span class="skill-tag">Diseño</span>
+                <span class="skill-tag">Paquete office avanzado</span>
+                 <span class="skill-tag">Inglés</span>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Conversemos</h2>
+        <p>Envíame un mensaje para colaboraciones o consultas.</p>
+        <form action= "https://formspree.io/f/mpwevbvo" method="POST"> 
+    
+    <input type="hidden" name="_language" value="es" />
+
+    <input type="text" name="name" placeholder="Tu Nombre" required>
+    <input type="email" name="_replyto" placeholder="Tu Email" required>
+    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+    <button type="submit">Enviar Mensaje</button>
+</form>
+    </section>
+
+    <footer>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        
+        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        
+        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
+    <i class="fas fa-envelope"></i>
+</a>
+
+    </div>
+    
+    <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+</footer>
+
+ <script>
+        const toggleButton = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+                navbar.classList.toggle('active'); 
+            });
+        }
+  
+</script>
+</body>
+</html>
