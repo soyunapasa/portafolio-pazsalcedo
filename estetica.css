@@ -162,95 +162,114 @@ footer { background-color: var(--text-color); color: #FDFBF7; padding: 3rem 5%; 
 .social-icons a:hover { color: var(--accent-color); }
 footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
 
-/* --- RESPONSIVE (MÓVIL) --- */
-@media (max-width: 768px) {
+/* --- RESPONSIVE (MÓVIL Y TABLET) --- */
+@media (max-width: 1024px) { /* Aumentamos el rango para asegurar que tome todos los celulares */
     
-    /* 1. SOLUCIÓN AL "TRABE" (LAG) */
-    /* Detenemos la animación del fondo en celulares para ahorrar recursos */
+    /* 1. SOLUCIÓN LAG (Fondo estático) */
     .background-pattern {
         animation: none; 
     }
 
-    /* 2. AJUSTE DEL MENÚ (TEXTO VERTICAL LIMPIO) */
+    /* 2. FORZAR DISEÑO VERTICAL EN HERO */
+    .hero {
+        padding-top: 6rem; /* Un poco más de aire arriba */
+        min-height: auto;
+        padding-bottom: 4rem;
+        height: auto; /* Permite que crezca lo necesario */
+    }
+    
+    .hero-container { 
+        display: flex;
+        flex-direction: column; /* Pone uno abajo del otro IMPERATIVAMENTE */
+        align-items: center;    /* Centra todo horizontalmente */
+        justify-content: center;
+        gap: 3rem;
+        width: 100%; /* Ocupa todo el ancho */
+    }
+    
+    .hero-content { 
+        text-align: center; 
+        width: 100%;
+        max-width: 100%; /* Evita que se quede chico */
+        padding: 0 20px; /* Margen para que no toque los bordes */
+    }
+    
+    .hero h1 { 
+        font-size: 2.5rem; 
+        line-height: 1.2;
+    }
+    
+    .title-container { 
+        margin: 0 auto 1rem auto; /* Centrado estricto */
+        align-items: center;
+    } 
+    
+    .hero-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center; /* Centra el botón explícitamente */
+    }
+
+    /* 3. CONTENEDOR DE LA TARJETA (Centrado total) */
+    .hero-card-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centra la tarjeta horizontalmente */
+        margin-top: 1rem; /* Espacio extra arriba de la tarjeta */
+    }
+    
+    /* Ajuste de la tarjeta */
+    .card { 
+        margin: 0 auto; /* Asegura centrado */
+        transform: scale(0.95); 
+    }
+
+    /* 4. MENÚ DE NAVEGACIÓN (Lista Vertical Limpia) */
     .navbar {
         display: none;
         position: absolute;
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: var(--white); /* Fondo blanco sólido */
+        background-color: var(--white);
         flex-direction: column;
         padding: 2rem;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
     }
     
     .navbar.active { display: flex; }
     
-    /* Quitamos el estilo de "Botón" y lo dejamos como texto elegante */
     .nav-btn { 
         display: block; 
         width: 100%; 
         text-align: center;
-        background-color: transparent; /* Sin fondo naranja */
-        color: var(--text-color);      /* Texto color café */
-        box-shadow: none;              /* Sin sombra */
-        padding: 15px 0;               /* Más espacio entre palabras */
-        border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil separadora */
+        background-color: transparent; 
+        color: var(--text-color);      
+        box-shadow: none;              
+        padding: 15px 0;               
+        border-bottom: 1px solid rgba(0,0,0,0.05); 
         border-radius: 0;
     }
     
     .nav-btn:hover { 
         background-color: transparent; 
-        color: var(--accent-color);    /* Se pone naranja al tocar */
-        transform: none;               /* Sin movimiento */
+        color: var(--accent-color);    
+        transform: none;               
     }
 
     .menu-toggle { display: block; }
     
-    /* 3. SOLUCIÓN POSICIÓN DE LA CARTA */
-    .hero { 
-        padding-top: 2rem; 
-        min-height: auto; /* Quitamos la altura forzada en celular */
-        padding-bottom: 4rem;
-    }
-    
-    .hero-container { 
-        /* 'column' pone los elementos uno abajo del otro en orden normal */
-        /* Texto Arriba -> Carta Abajo */
-        flex-direction: column; 
-        text-align: center; 
-        gap: 3rem;
-    }
-    
-    .hero-content { 
-        text-align: center; 
-        width: 100%; 
-    }
-    
-    .hero h1 { 
-        font-size: 2.5rem; 
-    }
-    
-    .title-container { 
-        align-items: center; /* Centra el typewriter */
-        margin: 0 auto 1rem auto;
-    } 
-    
-    /* Ajuste Typewriter en móvil */
+    /* Ajuste Typewriter para que no se rompa */
     .typewriter-line-1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
         white-space: normal; 
         width: 100%; 
         border: none; 
-        animation: fadeInUp 1s ease-out forwards; /* Animación simple */
+        animation: fadeInUp 1s ease-out forwards; 
         opacity: 0;
         text-align: center;
-    }
-    
-    /* Ajuste de la tarjeta para que no se vea gigante */
-    .card { 
-        margin: 0 auto; 
-        transform: scale(0.95); /* Un poquito más chica para pantallas angostas */
+        display: block;
     }
 }
 
@@ -352,4 +371,5 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         animation-delay: 0.3s;
     }
 }
+
 
