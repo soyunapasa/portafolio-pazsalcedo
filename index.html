@@ -123,9 +123,30 @@
     </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.navbar').classList.toggle('active');
-        });
+const toggleButton = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const icon = toggleButton.querySelector('i'); // Seleccionamos el ícono
+
+if (toggleButton) {
+    toggleButton.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+        
+        // Lógica para cambiar el ícono a una "X" y cambiar color
+        if (navbar.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+            toggleButton.style.color = "#ffffff"; // Blanco para verse sobre fondo oscuro
+            toggleButton.style.position = "fixed"; // Fijo para que no se mueva
+            toggleButton.style.right = "5%"; // Mismo margen que antes
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            toggleButton.style.color = ""; // Vuelve al color original
+            toggleButton.style.position = ""; 
+        }
+    });
+}
     </script>
 </body>
 </html>
+
