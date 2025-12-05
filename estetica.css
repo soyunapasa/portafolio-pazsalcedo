@@ -162,15 +162,96 @@ footer { background-color: var(--text-color); color: #FDFBF7; padding: 3rem 5%; 
 .social-icons a:hover { color: var(--accent-color); }
 footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
 
+/* --- RESPONSIVE (MÓVIL) --- */
 @media (max-width: 768px) {
-    .navbar { display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: var(--white); flex-direction: column; padding: 2rem; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    
+    /* 1. SOLUCIÓN AL "TRABE" (LAG) */
+    /* Detenemos la animación del fondo en celulares para ahorrar recursos */
+    .background-pattern {
+        animation: none; 
+    }
+
+    /* 2. AJUSTE DEL MENÚ (TEXTO VERTICAL LIMPIO) */
+    .navbar {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white); /* Fondo blanco sólido */
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
     .navbar.active { display: flex; }
-    .nav-btn { display: block; width: 100%; text-align: center; }
+    
+    /* Quitamos el estilo de "Botón" y lo dejamos como texto elegante */
+    .nav-btn { 
+        display: block; 
+        width: 100%; 
+        text-align: center;
+        background-color: transparent; /* Sin fondo naranja */
+        color: var(--text-color);      /* Texto color café */
+        box-shadow: none;              /* Sin sombra */
+        padding: 15px 0;               /* Más espacio entre palabras */
+        border-bottom: 1px solid rgba(0,0,0,0.05); /* Línea sutil separadora */
+        border-radius: 0;
+    }
+    
+    .nav-btn:hover { 
+        background-color: transparent; 
+        color: var(--accent-color);    /* Se pone naranja al tocar */
+        transform: none;               /* Sin movimiento */
+    }
+
     .menu-toggle { display: block; }
-    .hero-container { flex-direction: column-reverse; text-align: center; gap: 3rem;}
-    .hero-content { text-align: center; }
-    .hero h1 { font-size: 2.5rem; }
-    .card { margin: 0 auto; }
+    
+    /* 3. SOLUCIÓN POSICIÓN DE LA CARTA */
+    .hero { 
+        padding-top: 2rem; 
+        min-height: auto; /* Quitamos la altura forzada en celular */
+        padding-bottom: 4rem;
+    }
+    
+    .hero-container { 
+        /* 'column' pone los elementos uno abajo del otro en orden normal */
+        /* Texto Arriba -> Carta Abajo */
+        flex-direction: column; 
+        text-align: center; 
+        gap: 3rem;
+    }
+    
+    .hero-content { 
+        text-align: center; 
+        width: 100%; 
+    }
+    
+    .hero h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    .title-container { 
+        align-items: center; /* Centra el typewriter */
+        margin: 0 auto 1rem auto;
+    } 
+    
+    /* Ajuste Typewriter en móvil */
+    .typewriter-line-1 {
+        font-size: 2.2rem;
+        white-space: normal; 
+        width: 100%; 
+        border: none; 
+        animation: fadeInUp 1s ease-out forwards; /* Animación simple */
+        opacity: 0;
+        text-align: center;
+    }
+    
+    /* Ajuste de la tarjeta para que no se vea gigante */
+    .card { 
+        margin: 0 auto; 
+        transform: scale(0.95); /* Un poquito más chica para pantallas angostas */
+    }
 }
 
 /* --- ANIMACIONES DE TEXTO --- */
@@ -271,3 +352,4 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         animation-delay: 0.3s;
     }
 }
+
