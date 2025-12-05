@@ -1,230 +1,148 @@
-/* --- REINICIO BÁSICO --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* --- VARIABLES --- */
+:root {
+    --text-color: #3E2B26;
+    --accent-color: #E86A46;
+    --card-bg: #FBEFBC;
+    --white-trans: rgba(253, 251, 247, 0.97);
+    --white: #ffffff;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Poppins', sans-serif;
 }
+
+/* --- BASE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Poppins', sans-serif; 
-    line-height: 1.8; /* Mejor lectura */
-    background-color: #f9f9fc; /* Fondo muy suave, casi blanco */
-    color: #444; /* Gris oscuro en vez de negro puro para suavizar */
-    scroll-behavior: smooth; 
+    font-family: var(--font-sans);
+    line-height: 1.8;
+    color: var(--text-color);
+    background-color: transparent;
+    overflow-x: hidden;
 }
+
+/* --- FONDO ANIMADO --- */
+.background-pattern {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+    background-image: url('fondo-flores.svg'); 
+    background-repeat: repeat; background-size: 400px auto;
+    animation: moveBackground 60s linear infinite; 
+    opacity: 0.25; filter: grayscale(30%) blur(1px);
+}
+@keyframes moveBackground { 0% { background-position: 0 0; } 100% { background-position: 100% 100%; } }
 
 /* --- TIPOGRAFÍA --- */
-h1, h2, h3, .logo, .project-title {
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
+h1, h2, h3, .logo, .project-title { font-family: var(--font-serif); }
+h1 { font-weight: 700; }
+h2 { color: var(--accent-color); margin-bottom: 20px; font-size: 1.8rem; margin-top: 30px; display: flex; align-items: center; gap: 10px; }
+p { margin-bottom: 20px; font-size: 1.05rem; color: #554; }
+
+/* --- HEADER --- */
+header {
+    background-color: var(--white-trans); backdrop-filter: blur(10px); padding: 1rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(62, 43, 38, 0.1);
 }
 
-h1 { font-weight: 700; letter-spacing: 2px; }
-h2 { color: #ff4d6d; margin-bottom: 20px; font-size: 1.8rem; }
-h3 { color: #333; margin-bottom: 15px; font-size: 1.4rem; }
-
-p { margin-bottom: 20px; font-size: 1.05rem; }
-
-/* --- CABECERA (HEADER) --- */
-.header {
-    background: #111111; 
-    color: white;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky; 
-    top: 0;
-    z-index: 1000;
-    /*  sombra suave para separarlo aún más */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
-}
 .logo img {
-    height: 50px; /* Ajusta este número según qué tan grande quieras el logo */
-    width: auto; /* Mantiene la proporción para que no se deforme */
+    height: 70px; 
+    width: auto; 
     display: block;
-    
-    filter: invert(1) brightness(2); 
 }
 
-.navbar ul { list-style: none; display: flex; }
-.navbar a {
-    color: white;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s;
-    font-weight: 500;
+.logo a { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--text-color); text-decoration: none; }
+.logo span { color: var(--accent-color); font-size: 2.5rem; line-height: 0;}
+.navbar ul { display: flex; list-style: none; gap: 1rem; }
+.nav-btn {
+    display: inline-block; background-color: var(--accent-color); color: var(--white);
+    padding: 10px 25px; border-radius: 50px; text-decoration: none; font-weight: 500; font-size: 0.9rem;
+    transition: 0.3s; box-shadow: 0 2px 10px rgba(232, 106, 70, 0.2);
 }
-.navbar a:hover { color: #ff4d6d; }
+.nav-btn:hover { background-color: #d15634; transform: translateY(-2px); }
+.menu-toggle { display: none; background: none; border: none; font-size: 1.5rem; cursor: pointer; color: var(--text-color);}
 
-/* --- MENÚ MÓVIL (Botón) --- */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-}
+/* --- PROYECTO --- */
+.project-detail { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
 
-/* --- ESTILOS DE PÁGINA DE PROYECTO --- */
-.project-detail {
-    max-width: 1000px; /* Limita el ancho para que no se estire demasiado */
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
+/* Caja de Título */
 .project-header {
-    text-align: left;
-    margin-bottom: 40px;
+    text-align: center; margin-bottom: 40px; margin-top: 40px;
+    background: var(--white-trans); padding: 40px 30px;
+    border-radius: 30px; backdrop-filter: blur(5px);
+    box-shadow: 0 10px 30px rgba(62, 43, 38, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.project-title {
-    font-size: 3rem;
-    color: #222;
-    margin-bottom: 5px;
-}
-
-.project-client {
-    font-family: 'Poppins', sans-serif;
-    font-style: italic;
-    color: #666;
-    margin-bottom: 10px;
-}
+.project-title { font-size: 3.5rem; color: var(--text-color); margin-bottom: 5px; line-height: 1.2; }
+.project-client { font-style: italic; color: #666; margin-bottom: 20px; font-family: var(--font-serif); }
 
 .project-meta {
-    display: inline-block;
-    background: #ff4d6d;
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    display: inline-block; background: var(--card-bg); color: var(--text-color);
+    padding: 10px 25px; border-radius: 50px; font-size: 0.95rem; font-weight: 600;
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
-
-
-
-/* --- CONTENIDO DEL PROYECTO --- */
-.project-description {
-    background: white;
-    padding: 40px; /* Más espacio interno */
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.text-block {
-    max-width: 800px;
-    margin: 0 auto 40px auto; /* Centrar el texto */
-    text-align: left;
-}
-
-/* Divisor estético */
-.divider {
-    border: 0;
-    height: 1px;
-    background: #e0e0e0;
-    margin: 40px auto;
-    max-width: 800px;
-}
-
-
-/* --- CONTENEDOR SCRATCH CORREGIDO --- */
+/* --- CONTENEDOR SCRATCH (Juego) --- */
 .scratch-responsive {
-    /* 1. Centrado */
     margin: 40px auto;
-    
-    /* 2. Tamaño exacto */
-    width: 100%; 
-    max-width: 485px; /* El ancho original de Scratch */
-    
-    /* 3. La Magia: Mantiene la proporción exacta (Ancho / Alto) */
+    width: 100%; max-width: 485px; /* Ancho original de Scratch */
     aspect-ratio: 485 / 402; 
     
-    /* 4. Estética */
-    border: 4px solid #2c2c34; /* Borde oscuro para enmarcar */
-    border-radius: 12px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    background-color: #e0e0e0; /* Fondo gris mientras carga */
-    overflow: hidden; /* Para que las esquinas redondeadas funcionen */
+    /* Estilo actualizado */
+    border: 5px solid var(--white); 
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(62, 43, 38, 0.2); /* Sombra elegante */
+    background-color: #e0e0e0; 
+    overflow: hidden;
+}
+.scratch-responsive iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* --- CONTENIDO --- */
+.project-description {
+    background: var(--white); padding: 60px 40px;
+    border-radius: 30px; box-shadow: 0 10px 40px rgba(62, 43, 38, 0.08);
+    border: 1px solid rgba(62, 43, 38, 0.05); position: relative; z-index: 2;
 }
 
-.scratch-responsive iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block; /* Elimina espacios fantasma */
+.text-block { max-width: 800px; margin: 0 auto; text-align: left; }
+
+.divider {
+    border: 0; height: 1px; background: rgba(62, 43, 38, 0.1);
+    margin: 40px auto; max-width: 100px;
 }
 
+/* Lista de tareas / características */
+.task-list {
+    list-style: none; padding: 0; margin-top: 20px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+.task-list li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 1rem; color: #555;
+    background: #fdfdfd; padding: 10px 15px; border-radius: 10px; border: 1px solid #eee;
+}
+.task-list i { color: var(--accent-color); font-size: 1.1rem; }
 
+/* --- FOOTER --- */
+footer { background-color: var(--text-color); color: #FDFBF7; padding: 3rem 5%; text-align: center; position: relative; z-index: 2; }
+.social-icons a { color: #FDFBF7; font-size: 1.5rem; margin: 0 12px; transition: 0.3s; }
+.social-icons a:hover { color: var(--accent-color); }
+footer p { color: #FDFBF7; margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
 
-/* --- RESPONSIVE (Móvil) --- */
+/* --- ANIMACIONES --- */
+.fade-in-up { opacity: 0; animation: fadeInUp 1s ease-out forwards; }
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .header { padding: 10px 5%; }
-    
-    .project-title { font-size: 2rem; }
-    
-    .project-detail { padding: 0 15px; }
-    
-    .project-description { padding: 25px; }
-    
-    .pdf-viewer { height: 500px; }
-
-    /* Menú Hamburguesa en Móvil */
+    .navbar { display: none; position: absolute; top: 70px; left: 0; width: 100%; background-color: var(--white); flex-direction: column; padding: 2rem; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+    .navbar.active { display: flex; }
+    .nav-btn { display: block; width: 100%; text-align: center; }
     .menu-toggle { display: block; }
-
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%; /* Justo debajo del header */
-        left: 0;
-        width: 100%;
-        background: #111;
-        padding: 20px 0;
-        text-align: center;
-    }
-
-    .navbar.active { display: block; }
-
-    .navbar ul { flex-direction: column; gap: 15px; }
     
-    .navbar a { display: block; padding: 10px; font-size: 1.1rem; }
-}
-
-/* --- PIE DE PÁGINA (Footer) CORREGIDO --- */
-footer {
-    background: #1a1a2e;
-    color: #ccc;
-    text-align: center;
-    padding: 40px 0;
-    font-size: 0.9rem;
-    
-    /* ESTO ES NUEVO: Asegura que la barra negra ocupe todo el ancho */
-    width: 100%;
-    position: relative;
-    overflow: hidden; /* Evita que cualquier cosa se salga de la barra */
-}
-
-.social-icons {
-    margin-bottom: 20px;
-    
-    /* LA CLAVE: Usar Flexbox para centrar y evitar cortes */
-    display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    flex-wrap: wrap; /* Si no caben, los baja al renglón siguiente (no los corta) */
-    gap: 20px; /* Espacio limpio entre iconos */
-}
-
-.social-icons a {
-    color: white;
-    font-size: 1.5rem;
-    /* Quitamos el margen lateral porque ahora usamos 'gap' arriba */
-    transition: all 0.3s ease;
-    display: inline-block; /* Necesario para que la animación funcione */
-    text-decoration: none;
-}
-
-.social-icons a:hover {
-    color: #ff4d6d;
-    transform: translateY(-5px); /* El saltito al pasar el mouse */
+    .project-title { font-size: 2.2rem; }
+    .project-header, .project-description { padding: 30px 20px; }
 }
