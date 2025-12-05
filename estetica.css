@@ -303,13 +303,36 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
 
     /* 3. ¡ADIÓS TARJETA EN MÓVIL! */
     .hero-card-wrapper {
-        display: none; /* Esto la oculta por completo en pantallas chicas */
+        display: none; 
     }
 
-    /* 4. TÍTULO MÁS PEQUEÑO Y ESTÉTICO */
+    /* 4. AJUSTE DE TAMAÑOS DE TÍTULOS (UNIFICADO A 2rem) */
+    
+    /* Título Principal (Hero) */
+    .typewriter-line-1 {
+        font-size: 2rem; /* El tamaño base que te gustó */
+        line-height: 1.3;
+        white-space: normal; 
+        width: 100%; 
+        border: none; 
+        animation: fadeInUp 1s ease-out forwards; 
+        opacity: 0;
+        text-align: center;
+        display: block;
+    }
+
+    /* Títulos de Secciones (Proyectos, Sobre Mí, Contacto) */
+    .section-header h2, 
+    .about-card h2, 
+    .contact h2 {
+        font-size: 2rem; /* Ahora coinciden exactamente con el título principal */
+        line-height: 1.3;
+    }
+
+    /* 5. AJUSTES DE ESPACIADO */
     .hero {
-        padding-top: 4rem; /* Menos espacio arriba */
-        min-height: 60vh;  /* Altura más relajada ya que no hay tarjeta */
+        padding-top: 4rem; 
+        min-height: 60vh;  
         align-items: center;
         display: flex;
     }
@@ -326,21 +349,8 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         padding: 0 15px; 
     }
     
-    /* Ajuste del tamaño de letra */
-    .typewriter-line-1 {
-        font-size: 2rem; /* Mucho más chico (antes 3.5rem) */
-        line-height: 1.3;
-        white-space: normal; 
-        width: 100%; 
-        border: none; 
-        animation: fadeInUp 1s ease-out forwards; 
-        opacity: 0;
-        text-align: center;
-        display: block;
-    }
-    
     .subtitle {
-        font-size: 1rem; /* Subtítulo también un poco más delicado */
+        font-size: 1rem; 
         margin-top: 1rem;
     }
     
@@ -355,4 +365,3 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         justify-content: center; 
     }
 }
-
