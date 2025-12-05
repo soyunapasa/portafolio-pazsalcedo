@@ -276,7 +276,7 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         left: 0;
         width: 100%;
         height: 100vh; /* Ocupa toda la altura */
-        background-color: var(--text-color); /* MARRÓN OSCURO (#3E2B26) */
+        background-color: var(--card-bg); /* AMARILLITO */
         flex-direction: column;
         justify-content: center; /* Centrado vertical */
         align-items: center; /* Centrado horizontal */
@@ -292,9 +292,10 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
     
     .navbar ul {
         flex-direction: column;
-        gap: 30px; /* Espacio entre items */
+        gap: 15px; /* Espacio entre items */
         width: 100%;
         text-align: center;
+        padding: 0;
     }
 
     /* ESTILO DE LOS ENLACES (Letras Grandes y Blancas) */
@@ -304,9 +305,9 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         background-color: transparent; 
         color: #ffffff; /* Texto Blanco */
         font-family: var(--font-serif); /* Fuente elegante */
-        font-weight: 700;
-        font-size: 2.5rem; /* ¡LETRAS GRANDES! */
-        padding: 10px 0;               
+        font-weight: 600;
+        font-size: 1.5rem; /* ¡LETRAS GRANDES! */
+        padding: 15px 0;               
         box-shadow: none;
         border-radius: 0;
         border: none;
@@ -317,7 +318,7 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
     .nav-btn:hover, .nav-btn:active { 
         background-color: var(--accent-color); /* Fondo Naranja al tocar */
         color: var(--white);
-        transform: scale(1.1); /* Efecto de crecimiento */
+        transform: none;
     }
 
     /* BOTÓN HAMBURGUESA (Ajuste de posición) */
@@ -381,3 +382,4 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
     .task-list { grid-template-columns: 1fr; }
     .process-gallery { grid-template-columns: 1fr; }
 }
+
