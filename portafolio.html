@@ -4,123 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Completo - Paz Salcedo</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="portafolio.css">
-</head>
+    
+    <link rel="stylesheet" href="estetica.css">
+    
+    <style>
+        /* AJUSTE DE POSICIÓN DEL TÍTULO */
+        .page-header {
+            text-align: center;
+            padding: 6rem 5% 5rem; 
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra el efecto de escritura */
+        }
+        
+        /* Ajuste específico para que la animación de escritura se vea bien aquí */
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem; /* Un poco más chico que la home para que entre mejor */
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            width: fit-content; /* Se ajusta al texto */
+        }
 
+        .page-header p {
+            color: #554;
+            font-size: 1.1rem;
+            max-width: 600px;
+        }
+    </style>
+</head>
 <body>
 
-   <header class="header">
-       <div class="logo">
-    <a href="index.html"> <img src="logo1.png" alt="Logo Paz Salcedo">
-    </a>
-</div>
-      
+    <div class="background-pattern"></div>
+
+    <header class="header">
+        <div class="logo">
+    <a href="#home"> <img src="logo1.svg" alt="Logo Paz Salcedo"></a> </div>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html#home">Inicio</a></li>
-                <li><a href="portafolio.html">Portafolio</a></li> 
-                <li><a href="index.html#about">Sobre Mí</a></li>
-                <li><a href="index.html#contact">Contacto</a></li>
+                <li><a href="index.html" class="nav-btn">Inicio</a></li>
+                <li><a href="portafolio.html" class="nav-btn" style="background-color: #d15634;">Proyectos</a></li>
+                <li><a href="index.html#about" class="nav-btn">Sobre Mí</a></li>
+                <li><a href="index.html#contact" class="nav-btn">Contacto</a></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button> 
     </header>
 
+    <div class="page-header">
+        <h1>
+            <span class="typewriter-line-1" style="border-right-color: var(--accent-color);">Mis Proyectos y Colaboraciones.</span>
+        </h1>
+        <p class="fade-in-up delay-1">Una colección de proyectos audiovisuales, diseños y creatividad.</p>
+    </div>
+
     <section class="portfolio">
-        <h2>Todos los Proyectos y Colaboraciones</h2>
         <div class="gallery">
             
             <a href="amanay.html" class="project-item">
-                <img src="amanaylogo.png" alt="Proyecto transmedia">
-                <h3>PROYECTO AMANAY</h3>
+                <div class="img-container">
+                    <img src="amanaylogo.png" alt="Proyecto Amanay">
+                </div>
+                <div class="card-text">
+                    <h3>Proyecto Amanay</h3>
+                    <p>Transmedia <i class="fas fa-arrow-right"></i></p>
+                </div>
             </a>
             
             <a href="documental.html" class="project-item">
-                <img src="documental.png" alt="Cortometraje">
-                <h3>Productora de Cortometraje</h3>
+                <div class="img-container">
+                    <img src="documental.png" alt="Cortometraje">
+                </div>
+                <div class="card-text">
+                    <h3>Documental</h3>
+                    <p>Producción <i class="fas fa-arrow-right"></i></p>
+                </div>
             </a>
             
             <a href="juego.html" class="project-item">
-                <img src="juego.png" alt="Juego online">
-                <h3>Programación juego online</h3>
+                <div class="img-container">
+                    <img src="juego.png" alt="Juego online">
+                </div>
+                <div class="card-text">
+                    <h3>Juego Online</h3>
+                    <p>Programación <i class="fas fa-gamepad"></i></p>
+                </div>
             </a>
-             
+
             <a href="https://drive.google.com/file/d/17RP5aqAJhtLDE6DroH4k0vY5Hy6B4N5k/view?usp=drive_link" class="project-item" target="_blank">
-                <img src="Reencuentro.png" alt="Cortometraje">
-                <h3>Cortometraje "Reencuentro"</h3>
+                <div class="img-container">
+                    <img src="Reencuentro.png" alt="Cortometraje Reencuentro">
+                </div>
+                <div class="card-text">
+                    <h3>Reencuentro</h3>
+                    <p>Cortometraje <i class="fas fa-play-circle"></i></p>
+                </div>
             </a>
 
-             <a href="https://youtu.be/ScdD6bCo9B4?si=UqjWueQKrA5Q-2Kj" class="project-item" target="_blank">
-                <img src="stopmotion.png" alt="Stop Motion">
-                <h3>Stop Motion</h3>
+            <a href="https://youtu.be/ScdD6bCo9B4?si=UqjWueQKrA5Q-2Kj" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="stopmotion.png" alt="Stop Motion">
+                </div>
+                <div class="card-text">
+                    <h3>Stop Motion</h3>
+                    <p>Animación <i class="fab fa-youtube"></i></p>
+                </div>
             </a>
 
-             <a href="https://youtu.be/thbINbrPOK0?si=oFs-Jw1EyLBXNEXV" class="project-item" target="_blank">
-                <img src="malaugurio.png" alt="Mal Augurio">
-                <h3>Cortometraje "Mal Augurio"</h3>
+            <a href="https://youtu.be/thbINbrPOK0?si=oFs-Jw1EyLBXNEXV" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="malaugurio.png" alt="Mal Augurio">
+                </div>
+                <div class="card-text">
+                    <h3>Mal Augurio</h3>
+                    <p>Cortometraje <i class="fab fa-youtube"></i></p>
+                </div>
             </a>
+
             <a href="https://youtu.be/OUHyRWwWYzM?si=hIgoNvhuUCGDJJe9" class="project-item" target="_blank">
-                <img src="videoclip.png" alt="Mal Augurio">
-                <h3>Video Musical</h3>
-            </a>
-            <a href="https://youtu.be/rjUt4Y0XyN0?si=VGARccknQpSl2RvL" class="project-item" target="_blank">
-                <img src="elrefugiodealejo.png" alt="Mal Augurio">
-                <h3>Cortometraje "El refugio de Alejo"</h3>
-            </a>
-            <a href="https://drive.google.com/file/d/1_Aly3-QAZalmE_po68yvILjQCZiNmQpo/view?usp=sharing" class="project-item" target="_blank">
-                <img src="festifercho.png" alt="Mal Augurio">
-                <h3>Festival FestiFercho</h3>
-            </a>
-            <a href="https://www.instagram.com/lastresmariasfontana/" class="project-item" target="_blank">
-                <img src="lastresmarias.png" alt="Mal Augurio">
-                <h3>Redes Sociales: Mi panadería</h3>
-            </a>
-            <a href="https://docs.google.com/document/d/1rXSUcYMR2jN5bF_6BJ44aPYiMhnO3MxyIv3SSPyLNeo/edit?usp=sharing" class="project-item" target="_blank">
-                <img src="espejismos.png" alt="Mal Augurio">
-                <h3>Proyecto "Espejismos"</h3>
-            </a>
-            <a href="https://www.instagram.com/buscoempleo_chaco/" class="project-item" target="_blank">
-                <img src="REDES.png" alt="Mal Augurio">
-                <h3>Cuenta de Empleo</h3>
+                <div class="img-container">
+                    <img src="videoclip.png" alt="Video Musical">
+                </div>
+                <div class="card-text">
+                    <h3>Video Musical</h3>
+                    <p>Videoclip <i class="fab fa-youtube"></i></p>
+                </div>
             </a>
 
-            </div>
+            <a href="https://youtu.be/rjUt4Y0XyN0?si=VGARccknQpSl2RvL" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="elrefugiodealejo.png" alt="El refugio de Alejo">
+                </div>
+                <div class="card-text">
+                    <h3>El refugio de Alejo</h3>
+                    <p>Cortometraje <i class="fab fa-youtube"></i></p>
+                </div>
+            </a>
+
+            <a href="https://drive.google.com/file/d/1_Aly3-QAZalmE_po68yvILjQCZiNmQpo/view?usp=sharing" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="festifercho.png" alt="Festival FestiFercho">
+                </div>
+                <div class="card-text">
+                    <h3>FestiFercho</h3>
+                    <p>Festival <i class="fas fa-ticket-alt"></i></p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/lastresmariasfontana/" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="lastresmarias.png" alt="Las Tres Marias">
+                </div>
+                <div class="card-text">
+                    <h3>Mi Panadería</h3>
+                    <p>Redes Sociales <i class="fab fa-instagram"></i></p>
+                </div>
+            </a>
+
+            <a href="https://docs.google.com/document/d/1rXSUcYMR2jN5bF_6BJ44aPYiMhnO3MxyIv3SSPyLNeo/edit?usp=sharing" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="espejismos.png" alt="Espejismos">
+                </div>
+                <div class="card-text">
+                    <h3>Espejismos</h3>
+                    <p>Proyecto <i class="fas fa-file-alt"></i></p>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/buscoempleo_chaco/" class="project-item" target="_blank">
+                <div class="img-container">
+                    <img src="REDES.png" alt="Cuenta de Empleo">
+                </div>
+                <div class="card-text">
+                    <h3>Busco Empleo Chaco</h3>
+                    <p>Gestión RRSS <i class="fab fa-instagram"></i></p>
+                </div>
+            </a>
+
+        </div>
     </section>
 
-    <footer>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        
-        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
+ <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/pazi.chibi" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:ppazsalcedo19@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+    </footer>
 
-     <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
-    <i class="fas fa-envelope"></i>
-</a>
-    </div>
-    
-    <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
-</footer>
-    
     <script>
         const toggleButton = document.querySelector('.menu-toggle');
         const navbar = document.querySelector('.navbar');
-
-        toggleButton.addEventListener('click', () => {
-            navbar.classList.toggle('active'); 
-        });
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+                navbar.classList.toggle('active'); 
+            });
+        }
     </script>
 </body>
-
 </html>
