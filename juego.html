@@ -7,38 +7,36 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <link rel="stylesheet" href="juego.css"> 
+    <link rel="stylesheet" href="juego.css">
 </head>
 <body>
 
+    <div class="background-pattern"></div>
+
     <header class="header">
-       <div class="logo">
-            <a href="index.html"> 
-                <img src="logo1.png" alt="Logo Paz Salcedo">
-            </a>
-        </div>
-      
+      <div class="logo">
+    <a href="#home"> <img src="logo1.svg" alt="Logo Paz Salcedo"></a> </div>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="index.html#about">Sobre Mí</a></li>
-                <li><a href="index.html#contact">Contacto</a></li>
+                <li><a href="index.html" class="nav-btn">Inicio</a></li>
+                <li><a href="portafolio.html" class="nav-btn">Proyectos</a></li>
+                <li><a href="index.html#about" class="nav-btn">Sobre Mí</a></li>
+                <li><a href="index.html#contact" class="nav-btn">Contacto</a></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button> 
     </header>
 
     <section class="project-detail">
-        
         <div class="project-header">
-            <h1 class="project-title">Programación de juego</h1>
-            <p class="project-client">Programado en Scratch</p>
-            <div class="project-meta">
-                <span>Rol: Programadora, creadora</span> |  
+            <h1 class="project-title fade-in-up">Programación de Juego</h1>
+            <p class="project-client fade-in-up delay-1">Desarrollado en Scratch con lógica de bloques</p>
+            
+            <div class="project-meta fade-in-up delay-2">
+                <span>Rol: Programadora & Creadora</span> |  
                 <span>Año: 2023</span>
             </div>
         </div>
@@ -54,57 +52,48 @@
         </div>
 
         <div class="project-description">
-            <div class="text-block" >
-                <h2>Cómo Jugar 🎮</h2>
+            <div class="text-block">
+                <h2><i class="fas fa-gamepad" style="color: var(--accent-color);"></i> Cómo Jugar</h2>
                 <p>
                     Haz clic en la <strong>Bandera Verde</strong> para iniciar.
                     <br>
-                    Usa la <strong>flecha derecha</strong> para moverte y <strong>hacé clic</strong> cuando sea necesario para interactuar.
+                    Usa la <strong>flecha derecha</strong> para moverte y <strong>haz clic</strong> sobre los objetos para interactuar con ellos.
                 </p>
-            </div>
-            
-            <div class="text-block">
+                
+                <hr class="divider">
+
                 <h2>Sobre el desarrollo</h2>
                 <p>
-                    En este proyecto exploré la lógica de programación visual. Creé primero un guión y las subtramas del juego, investigué imágenes y las arreglé para que queden bien. El sonido es una canción "A lo verde- La Vela Puerca" que no tiene voz y está con efecto para que parezca mas de un juego.
+                    En este proyecto exploré la lógica de programación visual y el diseño de interacción. El proceso incluyó:
                 </p>
+                <ul class="task-list">
+                    <li><i class="fas fa-pencil-alt"></i> Guión y narrativa ramificada</li>
+                    <li><i class="fas fa-image"></i> Diseño y edición de sprites (imágenes)</li>
+                    <li><i class="fas fa-code"></i> Lógica de bloques y variables</li>
+                    <li><i class="fas fa-music"></i> Edición de sonido y efectos (Música: "A lo verde" - La Vela Puerca)</li>
+                </ul>
             </div>
         </div>
-
     </section>
 
-    <footer>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        
-        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
-
-     <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
-    <i class="fas fa-envelope"></i>
-</a>
-    </div>
+  <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/pazi.chibi" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:ppazsalcedo19@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
         <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
     </footer>
-    
+
     <script>
         const toggleButton = document.querySelector('.menu-toggle');
         const navbar = document.querySelector('.navbar');
-
         if (toggleButton) {
             toggleButton.addEventListener('click', () => {
                 navbar.classList.toggle('active'); 
             });
         }
     </script>
-
 </body>
-
 </html>
