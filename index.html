@@ -4,130 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paz Salcedo - Portafolio</title>
-    <link rel="stylesheet" href="estetica.css">
-</head>
-<head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Paz Salcedo - Portafolio</title>
     <link rel="stylesheet" href="estetica.css">
 </head>
 <body>
 
+    <div class="background-pattern"></div>
+
     <header class="header">
        <div class="logo">
-    <a href="#home"> <img src="logo1.png" alt="Logo Paz Salcedo">
-    </a>
-</div>
+    <a href="#home"> <img src="logo1.svg" alt="Logo Paz Salcedo"></a> </div>
         <nav class="navbar">
             <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="portafolio.html">Portafolio</a></li>
-                <li><a href="#about">Sobre Mí</a></li>
-                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#home" class="nav-btn">Inicio</a></li>
+                <li><a href="portafolio.html" class="nav-btn">Proyectos</a></li>
+                <li><a href="#about" class="nav-btn">Sobre Mí</a></li>
+                <li><a href="#contact" class="nav-btn">Contacto</a></li>
             </ul>
         </nav>
-        <button class="menu-toggle" aria-label="Abrir Menú">&#9776;</button> 
+        <button class="menu-toggle"><i class="fas fa-bars"></i></button> 
     </header>
 
     <section id="home" class="hero">
-        <h1>Producción de videos y Motion Graphics</h1>
-        <p>Técnica en Diseño de Imagen, Sonido y Multimedia - UNNE</p>
-        
-   <div class="video-responsive">
-    <iframe 
-        src="https://www.youtube.com/embed/OUHyRWwWYzM?autoplay=1&mute=1" 
-        title="Proyecto de un Sueño" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen
-    ></iframe>
+      <div class="hero-content">
+    <h1 class="title-container">
+        <span class="typewriter-line-1">Diseñadora Multimedia.</span>
+    </h1>
+    
+    <p class="subtitle fade-in-up delay-1">¿Querés destacar e innovar tu negocio?</p>
+    
+    <div class="hero-buttons fade-in-up delay-2">
+        <a href="portafolio.html" class="btn-primary">Mirá mis trabajos</a>
+    </div>
 </div>
-</section>
+            
+            <div class="hero-card-wrapper">
+                <div class="card">
+                    <a href="mailto:ppazsalcedo19@gmail.com" class="mail"><i class="fas fa-envelope"></i></a>
+                    
+                    <div class="profile-pic">
+                        <img src="foto-paz.jpg" alt="Paz Salcedo">
+                    </div>
+                    
+                    <div class="bottom">
+                        <div class="content">
+                            <span class="name">Paz Salcedo</span>
+                            <span class="about-me">Técnica en Diseño de Imagen, Sonido y Multimedia. <br> Universidad Nacional del Nordeste. </span>
+                        </div>
+                        
+                        <div class="bottom-btn-container">
+                            <a href="#contact" class="button">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="portfolio" class="portfolio">
-        <h2>Mi Trabajo Destacado</h2>
+        <div class="section-header"><h2>Proyectos Destacados</h2></div>
         <div class="gallery">
-            <a href="amanay.html" class="project-item"> <img src="amanaylogo.png" alt="Proyecto 1: Animación de Logo">
-                <h3>Proyecto Amanay</h3>
+            <a href="amanay.html" class="project-item">
+                <div class="img-container"><img src="amanaylogo.png" alt="Proyecto Amanay"></div>
+                <div class="card-text"><h3>Proyecto Amanay</h3><p>Ver detalles <i class="fas fa-arrow-right"></i></p></div>
             </a>
             <a href="documental.html" class="project-item">
-                <img src="documental.png" alt="Cortometraje">
-                <h3>Documental</h3>
+                <div class="img-container"><img src="documental.png" alt="Documental"></div>
+                <div class="card-text"><h3>Cortometraje Documental</h3><p>Conocé mi rol <i class="fas fa-arrow-right"></i></p></div>
             </a>
-            </div>
+        </div>
     </section>
 
     <section id="about" class="about">
-        <h2>Hola, soy Maria Paz Salcedo</h2>
-        <p class="bio-text">Me recibí en noviembre 2025. Me especializo en diseño, con manejo de Adobe Premiere, After Effects y Blender. Fuí becada por Telecom donde aprendí a programar. Me apasiona trabajar con marcas y contar historias.</p>
-        
-        <div class="skills-container">
-            <h4>Mis Habilidades Clave:</h4>
-            <div class="skills-list">
-                <span class="skill-tag">Adobe After Effects</span>
-                <span class="skill-tag">Adobe Premiere</span>
-                <span class="skill-tag">Blender</span>
-                <span class="skill-tag">Motion Graphics</span>
-                 <span class="skill-tag">HTML y CSS</span>
-                 <span class="skill-tag">Diseño</span>
-                <span class="skill-tag">Paquete office avanzado</span>
-                 <span class="skill-tag">Inglés</span>
-
+        <div class="about-card">
+            <h2>¡Hola! Soy Paz</h2>
+            <p class="bio-text">La palabra que más me define es evolución. Entiendo cada desafío como una oportunidad para innovar y llevar el trabajo al siguiente nivel. Mi enfoque está siempre puesto en el futuro: cómo hacer que lo que hacemos hoy sea la base del éxito de mañana. Nunca dejo de buscar la mejor versión de mi trabajo.</p>
+            <div class="skills-container">
+                <div class="skills-list">
+                    <span class="skill-tag">Producción Audiovisual</span>
+                    <span class="skill-tag">Montaje</span>
+                       <span class="skill-tag">Diseño de logos</span>
+                    <span class="skill-tag">Animación de logos</span>
+                    <span class="skill-tag">Diseño Web</span>
+                    <span class="skill-tag">Motion Graphics</span>
+                    <span class="skill-tag">Social Media Management</span>
+                    <span class="skill-tag">Adobe After Effects</span>
+                    <span class="skill-tag">Adobe Premiere</span>
+                    <span class="skill-tag">Adobe Ilustrator</span>
+                    <span class="skill-tag">Blender</span>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Conversemos</h2>
-        <p>Envíame un mensaje para colaboraciones o consultas.</p>
-        <form action= "https://formspree.io/f/mpwevbvo" method="POST"> 
-    
-    <input type="hidden" name="_language" value="es" />
-
-    <input type="text" name="name" placeholder="Tu Nombre" required>
-    <input type="email" name="_replyto" placeholder="Tu Email" required>
-    <textarea name="message" placeholder="Tu Mensaje" required></textarea>
-    <button type="submit">Enviar Mensaje</button>
-</form>
+        <div class="contact-container">
+            <h2>Conversemos</h2>
+            <form action="https://formspree.io/f/mpwevbvo" method="POST"> 
+                <input type="text" name="name" placeholder="Tu Nombre" required>
+                <input type="email" name="_replyto" placeholder="Tu Email" required>
+                <textarea name="message" placeholder="Tu Mensaje" required></textarea>
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/pazi.chibi" target="_blank" aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-        </a>
-        
-        <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-        </a>
-        
-        <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank" aria-label="YouTube">
-            <i class="fab fa-youtube"></i>
-        </a>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/pazi.chibi" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/maria-paz-salcedo-ba724a237/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/c/pazsalcedo5007" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="mailto:ppazsalcedo19@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
+    </footer>
 
-        <a href="mailto:ppazsalcedo19@gmail.com" target="_blank" aria-label="Enviar Email a Paz">
-    <i class="fas fa-envelope"></i>
-</a>
-
-    </div>
-    
-    <p>&copy; 2025 Paz Salcedo. Todos los derechos reservados.</p>
-</footer>
-
- <script>
-        const toggleButton = document.querySelector('.menu-toggle');
-        const navbar = document.querySelector('.navbar');
-
-        if (toggleButton) {
-            toggleButton.addEventListener('click', () => {
-                navbar.classList.toggle('active'); 
-            });
-        }
-  
-</script>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', () => {
+            document.querySelector('.navbar').classList.toggle('active');
+        });
+    </script>
 </body>
-
 </html>
