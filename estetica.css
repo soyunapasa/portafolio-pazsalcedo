@@ -262,74 +262,67 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
     }
 }
 
-/* --- RESPONSIVE (MÓVIL Y TABLET) --- */
+/* --- RESPONSIVE (MÓVIL Y TABLET - MENÚ PANTALLA COMPLETA) --- */
 @media (max-width: 1024px) {
     
-    /* 1. SOLUCIÓN LAG (Fondo estático) */
-    .background-pattern {
-        animation: none; 
-    }
+    /* 1. SOLUCIÓN LAG */
+    .background-pattern { animation: none; }
 
-    /* 2. MENÚ DE NAVEGACIÓN (Lista Vertical Limpia) */
+    /* 2. MENÚ DE NAVEGACIÓN (FULL SCREEN) */
     .navbar {
-        display: none;
-        position: absolute;
-        top: 70px;
+        display: none; /* Oculto por defecto */
+        position: fixed; /* Fijo sobre toda la pantalla */
+        top: 0;
         left: 0;
         width: 100%;
-        background-color: var(--white);
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        z-index: 1000;
+        height: 100vh; /* 100% del alto de la pantalla */
+        background-color: var(--white-trans); /* Fondo blanco semitransparente */
+        backdrop-filter: blur(15px); /* Efecto vidrio borroso intenso */
+        flex-direction: column; /* Vertical */
+        justify-content: center; /* Centrado vertical */
+        align-items: center; /* Centrado horizontal */
+        gap: 25px; /* Espacio entre botones */
+        z-index: 999; /* Por encima de todo, pero debajo del botón de menú */
     }
     
     .navbar.active { display: flex; }
     
+    /* ESTILO DE BOTONES DEL MENÚ (Redondeados y estéticos) */
     .nav-btn { 
         display: block; 
-        width: 100%; 
+        width: 80%; /* Ancho cómodo */
+        max-width: 300px;
         text-align: center;
-        background-color: transparent; 
+        background-color: var(--card-bg); /* Fondo amarillo pastel */
         color: var(--text-color);      
-        box-shadow: none;              
+        font-family: var(--font-serif); /* Fuente elegante */
+        font-size: 1.5rem; /* Texto grande */
         padding: 15px 0;               
-        border-bottom: 1px solid rgba(0,0,0,0.05); 
-        border-radius: 0;
+        border-radius: 50px; /* Bordes totalmente redondos */
+        box-shadow: 0 5px 15px rgba(62, 43, 38, 0.1);
+        transition: transform 0.2s;
     }
     
-    .nav-btn:hover { color: var(--accent-color); transform: none; }
-    .menu-toggle { display: block; }
+    /* Efecto al tocar el botón en el celular */
+    .nav-btn:hover, .nav-btn:active { 
+        background-color: var(--accent-color); /* Se pone terracota */
+        color: var(--white);
+        transform: scale(1.05); /* Crece un poquito */
+        border: none;
+    }
+
+    /* BOTÓN HAMBURGUESA FLOTANTE */
+    .menu-toggle { 
+        display: block; 
+        position: relative; 
+        z-index: 1000; /* Asegura que siempre esté ENCIMA del menú para poder cerrar */
+        font-size: 2rem;
+    }
 
     /* 3. ¡ADIÓS TARJETA EN MÓVIL! */
-    .hero-card-wrapper {
-        display: none; 
-    }
+    .hero-card-wrapper { display: none; }
 
-    /* 4. AJUSTE DE TAMAÑOS DE TÍTULOS (UNIFICADO A 2rem) */
-    
-    /* Título Principal (Hero) */
-    .typewriter-line-1 {
-        font-size: 2rem; /* El tamaño base que te gustó */
-        line-height: 1.3;
-        white-space: normal; 
-        width: 100%; 
-        border: none; 
-        animation: fadeInUp 1s ease-out forwards; 
-        opacity: 0;
-        text-align: center;
-        display: block;
-    }
-
-    /* Títulos de Secciones (Proyectos, Sobre Mí, Contacto) */
-    .section-header h2, 
-    .about-card h2, 
-    .contact h2 {
-        font-size: 2rem; /* Ahora coinciden exactamente con el título principal */
-        line-height: 1.3;
-    }
-
-    /* 5. AJUSTES DE ESPACIADO */
+    /* 4. AJUSTES GENERALES MÓVIL */
     .hero {
         padding-top: 4rem; 
         min-height: 60vh;  
@@ -349,6 +342,27 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         padding: 0 15px; 
     }
     
+    /* Título Principal (Hero) */
+    .typewriter-line-1 {
+        font-size: 2rem; 
+        line-height: 1.3;
+        white-space: normal; 
+        width: 100%; 
+        border: none; 
+        animation: fadeInUp 1s ease-out forwards; 
+        opacity: 0;
+        text-align: center;
+        display: block;
+    }
+
+    /* Títulos unificados */
+    .section-header h2, 
+    .about-card h2, 
+    .contact h2 {
+        font-size: 2rem; 
+        line-height: 1.3;
+    }
+
     .subtitle {
         font-size: 1rem; 
         margin-top: 1rem;
@@ -364,4 +378,10 @@ footer p { margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
         display: flex;
         justify-content: center; 
     }
+    
+    /* Ajustes específicos para páginas de proyectos en móvil */
+    .project-title { font-size: 2.2rem; }
+    .project-header, .project-description, .pdf-section { padding: 30px 20px; }
+    .task-list { grid-template-columns: 1fr; }
+    .process-gallery { grid-template-columns: 1fr; }
 }
