@@ -140,3 +140,70 @@ footer p { color: #FDFBF7; margin-top: 1rem; opacity: 0.7; font-size: 0.9rem; }
     .project-header, .project-description { padding: 30px 20px; }
     .task-list { grid-template-columns: 1fr; } /* Una columna en móvil */
 }
+
+/* --- RESPONSIVE (MENÚ PANTALLA COMPLETA ESTILO APP) --- */
+@media (max-width: 1024px) {
+    
+    /* 1. FONDO ESTÁTICO (Sin lag) */
+    .background-pattern { animation: none; }
+
+    /* 2. MENÚ FULL SCREEN (Fondo Oscuro) */
+    .navbar {
+        display: none;
+        position: fixed; /* Fijo sobre toda la pantalla */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Ocupa toda la altura */
+        background-color: var(--card-bg); /* AMARILLITO */
+        flex-direction: column;
+        justify-content: center; /* Centrado vertical */
+        align-items: center; /* Centrado horizontal */
+        z-index: 999; /* Encima de todo */
+        opacity: 0; /* Efecto de aparición */
+        transition: opacity 0.3s ease; /* Suavidad */
+    }
+    
+    .navbar.active { 
+        display: flex; 
+        opacity: 1; /* Aparece suavemente */
+    }
+    
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px; /* Espacio entre items */
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+
+    /* ESTILO DE LOS ENLACES (Letras Grandes y Blancas) */
+    .nav-btn { 
+        display: block; 
+        width: 100%; 
+        background-color: transparent; 
+        color: var(--accent-color);
+        font-family: var(--font-serif); /* Fuente elegante */
+        font-weight: 600;
+        font-size: 1.5rem; /* ¡LETRAS GRANDES! */
+        padding: 15px 0;               
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        transition: all 0.3s ease;
+    }
+    
+    /* Efecto Hover (Franja Terracota como en tu referencia) */
+    .nav-btn:hover, .nav-btn:active { 
+        background-color: var(--accent-color); /* Fondo Naranja al tocar */
+        color: var(--white);
+        transform: none;
+    }
+
+    /* BOTÓN HAMBURGUESA (Ajuste de posición) */
+    .menu-toggle { 
+        display: block; 
+        z-index: 1000; 
+        font-size: 2rem;
+        color: var(--text-color);
+    }
